@@ -1,0 +1,9 @@
+# Create an RDD from the df_salaries
+rdd_salaries = df_salaries.rdd
+
+# Collect and print the results
+print(rdd_salaries.collect())
+
+dataframe_results = df_salaries.groupBy("experience_level").agg({"salary_in_usd": 'max'})
+
+dataframe_results.show()
