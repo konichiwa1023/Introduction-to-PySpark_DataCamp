@@ -4,6 +4,8 @@ rdd_salaries = df_salaries.rdd
 # Collect and print the results
 print(rdd_salaries.collect())
 
-dataframe_results = df_salaries.groupBy("experience_level").agg({"salary_in_usd": 'max'})
+# Group by the experience level and calculate the maximum salary
+dataframe_results = df_salaries.groupby("experience_level").agg({"salary_in_usd": 'max'})
 
-dataframe_results.show()
+# Show the results
+dataframe_results.show()  
